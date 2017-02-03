@@ -12,6 +12,7 @@ type Agent APIObject
 // Channel is the means by which the action was carried out.
 type Channel struct {
 	Type string
+	Summary string
 }
 
 // Context are to be included with the trigger such as links to graphs or images.
@@ -46,8 +47,8 @@ type ListLogEntryResponse struct {
 type ListLogEntriesOptions struct {
 	APIListObject
 	TimeZone   string   `url:"time_zone"`
-	Since      string   `url:"omitempty"`
-	Until      string   `url:"omitempty"`
+	Since      string   `url:"since,omitempty"`
+	Until      string   `url:"until,omitempty"`
 	IsOverview bool     `url:"is_overview,omitempty"`
 	Includes   []string `url:"include,omitempty,brackets"`
 }
